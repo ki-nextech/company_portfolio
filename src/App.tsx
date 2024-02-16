@@ -15,12 +15,13 @@ function App() {
             <span
               className="text-xl"
               style={{
-                fontFamily: "Noto Serif JP",
+                //全丸ゴシック
+                fontFamily: "Zen Maru Gothic",
                 color: "#595757",
-                letterSpacing: "0.2em",
+         
               }}
             >
-              KI.nextech合同会社
+              合同会社 アプリ製作所
             </span>
           </a>
           <nav className="md:ml-auto text-base">
@@ -29,35 +30,44 @@ function App() {
               className="mr-5 hover:text-blue-400 duration-1000"
               style={{ fontFamily: "Noto Serif JP", color: "#595757" }}
             >
-              Service
+              CONCEPT
             </a>
+
             <a
               href="#about"
               className="mr-5 hover:text-blue-400 duration-1000"
               style={{ fontFamily: "Noto Serif JP", color: "#595757" }}
             >
-              About
+              SERVICE＆PRICE
             </a>
             <a
               href="#skills"
               className="mr-5 hover:text-blue-400 duration-1000"
               style={{ fontFamily: "Noto Serif JP", color: "#595757" }}
             >
-              Skills
+              WORK
             </a>
             <a
               href="#awards"
               className=" hover:text-blue-400 duration-1000"
               style={{ fontFamily: "Noto Serif JP", color: "#595757" }}
             >
-              Awards
+              CONTACT
             </a>
           </nav>
         </div>
       </header>
-      <section className="text-gray-700">
-        <div className="flex container mx-auto py-20 px-5 flex-col md:flex-row items-center">
-          <div className="md:w-1/2 flex-grow mb-16 lg:pr-24 md:pr-16 text-center md:text-left">
+      <section className="text-gray-700" style={{ backgroundColor: '#E1F0F0'}}>
+        
+      
+        <div className="ml-3">
+          合同会社 アプリ製作所
+        </div>
+        <div className="md:w-1/2 lg:max-w-lg w-5/6">
+          合同会社 アプリ製作所
+        </div>
+
+          {/* <div className="md:w-1/2 flex-grow mb-16 lg:pr-24 md:pr-16 text-center md:text-left">
             <h1
               className="text-3xl sm:text-5x  ,mb-4"
               style={{
@@ -95,8 +105,8 @@ function App() {
           </div>
           <div className="md:w-1/2 lg:max-w-lg w-5/6">
             <img src="./img/portfolio.jpg" alt="" />
-          </div>
-        </div>
+          </div> */}
+        
       </section>
       <FadeAnimation>
         <section className="text-gray-700 border-t border-gray-200" id="service">
