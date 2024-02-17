@@ -1,16 +1,27 @@
-import "./App.css";
+import "./style.css";
 import { IoIosPhonePortrait } from "react-icons/io";
 import { MdComputer } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa";
 import { FaHeartbeat } from "react-icons/fa";
 import { motion } from "framer-motion";
+import hexagonImage from "./assets/hexagon.png";
+import ummImage from "./assets/umm.png";
 import { FadeAnimation } from "./FadeAnimation";
+import "./components/custom_underline.css";
+import { hookstate, useHookstate } from "@hookstate/core";
+import { useState } from "react";
+const hexagonCenterYState = hookstate(0);
 
 function App() {
+  const hexagonCenterY = useHookstate(hexagonCenterYState);
+  useState(() => {
+    const centerY = 100; // 仮の値
+    hexagonCenterYState.set(centerY);
+  });
   return (
     <>
       <header className="text-gray-700 border-b border-gray-200">
-        <div className="container flex mx-auto p-5 flex-col md:flex-row items-center">
+        <div className="container mx-auto max-w-7xl p-5 flex flex-col md:flex-row items-center">
           <a href="#" className="font-medium text-gray-900 mb-4 md:mb-0">
             <span
               className="text-xl"
@@ -18,7 +29,6 @@ function App() {
                 //全丸ゴシック
                 fontFamily: "Zen Maru Gothic",
                 color: "#595757",
-         
               }}
             >
               合同会社 アプリ製作所
@@ -57,17 +67,149 @@ function App() {
           </nav>
         </div>
       </header>
-      <section className="text-gray-700" style={{ backgroundColor: '#E1F0F0'}}>
-        
-      
-        <div className="ml-3">
-          合同会社 アプリ製作所
-        </div>
-        <div className="md:w-1/2 lg:max-w-lg w-5/6">
-          合同会社 アプリ製作所
+      <section className="" style={{ backgroundColor: "#E1F0F0" }}>
+        <div className="container mx-auto max-w-7xl">
+          <div className="ml-3">合同会社 アプリ製作所</div>
+          <div className="relative flex justify-end w-full">
+            <div className="relative flex justify-center items-center  w-1/2 ">
+              <img src={hexagonImage} alt="Hexagon" className="object-cover" />
+              {/* Text Overlay */}
+              <div
+                className="absolute flex flex-col justify-center items-center p-5"
+                style={{ width: "80%", height: "70%" }}
+              >
+                {/* Umm Image */}
+                <img
+                  src={ummImage}
+                  alt="Umm"
+                  className="object-cover"
+                  style={{ zIndex: 20 }}
+                />
+                {/* Button */}
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "-20px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                  }}
+                >
+                  <a href="https://docs.google.com/forms/d/1Qpt3GTKAA8UNbi9u48SF_ebxJ9K586Qgulha-0U-Uo8/edit">
+                    <button
+                      className="text-white py-2 px-6 border-0 rounded text-base duration-300 font-bold font-mono"
+                      style={{
+                        backgroundColor: "#80999C",
+                        fontFamily: "Zen Maru Gothic",
+                        letterSpacing: "0.15em",
+                        zIndex: 30,
+                        borderRadius: "20px",
+                      }}
+                    >
+                      お悩み、ご相談ください
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="relative w-full flex justify-start "
+          >
+            <div className="relative flex justify-center items-center mt-2 w-1/2">
+              {/* Hexagon Image */}
+
+              <img src={hexagonImage} alt="Hexagon" className="object-cover" />
+              {/* Text Overlay */}
+              <div
+                className="absolute flex flex-col justify-center items-center p-5"
+                style={{ width: "80%", height: "70%" }}
+              >
+                <p
+                  className="text-black font-bold text-center text-lg custom-underline"
+                  style={{
+                    //全丸ゴシック
+                    fontFamily: "Zen Maru Gothic",
+                  }}
+                >
+                  ABOUT US
+                </p>
+                <p
+                  className="text-black mt-4  text-center text-sm"
+                  style={{
+                    //全丸ゴシック
+                    fontFamily: "Zen Maru Gothic",
+                  }}
+                >
+                  私たちはMVP（Minimum Viable
+                  Product）開発に特化したデザイナーとエンジニアの技術者集団です。
+                </p>
+                <p
+                  className="text-black mt-4 text-center text-sm"
+                  style={{
+                    //全丸ゴシック
+                    fontFamily: "Zen Maru Gothic",
+                  }}
+                >
+                  全てのメンバーが企画から担当することができるため、お客さまと一緒にアイデアを練り上げ、開発を進めることで夢を共に実現するパートナーとなります。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="relative flex justify-end w-full">
+            <div className="relative flex justify-center items-center mt-10 w-1/2 ">
+              {/* Hexagon Image */}
+              <img src={hexagonImage} alt="Hexagon" className="object-cover" />
+              {/* Text Overlay */}
+              <div
+                className="absolute flex flex-col justify-center items-center p-5"
+                style={{ width: "80%", height: "70%" }}
+              >
+                <p
+                  className="text-black font-bold text-center text-lg custom-underline"
+                  style={{
+                    //全丸ゴシック
+                    fontFamily: "Zen Maru Gothic",
+                  }}
+                >
+                  SUPPORT SYSTEM
+                </p>
+                <div
+                  className="text-black flex flex-row mt-4 text-center text-sm"
+                  style={{
+                    //全丸ゴシック
+                    fontFamily: "Zen Maru Gothic",
+                  }}
+                >
+                  <p className="text-black mt-2 mr-4 text-2xl">1 :</p>
+
+                  <p className="text-black mt-2  text-xs">
+                    モックを用いて機能ごとに確認いただくことにより
+                    <br />
+                    あなたのアイデアに沿ったアプリ開発が行えます。
+                  </p>
+                </div>
+
+                <div
+                  className="text-black flex flex-row mt-4 text-sm"
+                  style={{
+                    //全丸ゴシック
+                    fontFamily: "Zen Maru Gothic",
+                  }}
+                >
+                  <p className="text-black mt-2 mr-4 text-2xl">2 :</p>
+
+                  <p className="text-black mt-2 text-xs">
+                    最新の技術（flutter + firebase）を使用することにより
+                    <br />
+                    早く安くアプリ開発を行うことが出来ます。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-          {/* <div className="md:w-1/2 flex-grow mb-16 lg:pr-24 md:pr-16 text-center md:text-left">
+        {/* <div className="md:w-1/2 flex-grow mb-16 lg:pr-24 md:pr-16 text-center md:text-left">
             <h1
               className="text-3xl sm:text-5x  ,mb-4"
               style={{
@@ -106,10 +248,12 @@ function App() {
           <div className="md:w-1/2 lg:max-w-lg w-5/6">
             <img src="./img/portfolio.jpg" alt="" />
           </div> */}
-        
       </section>
       <FadeAnimation>
-        <section className="text-gray-700 border-t border-gray-200" id="service">
+        <section
+          className="text-gray-700 border-t border-gray-200"
+          id="service"
+        >
           <div className="container px-5 py-20 mx-auto ">
             <div
               className="text-2xl sm:text-3xl mb-20"
@@ -213,13 +357,26 @@ function App() {
                         <IoIosPhonePortrait size={50} color="#FFFFFF" />
                       </div>
                     </div>
-                    <h2 className="text-lg font-medium ml-2 "style={{ fontFamily: "Noto Serif JP", color: "#000000" }}>
+                    <h2
+                      className="text-lg font-medium ml-2 "
+                      style={{ fontFamily: "Noto Serif JP", color: "#000000" }}
+                    >
                       スマホアプリ開発
                     </h2>
                   </div>
                   <div>
-                    <p className = 'text-sm' style={{ fontFamily: "Noto Serif JP", color: "#000000" }}>・体温計アプリ</p>
-                    <p className = 'text-sm' style={{ fontFamily: "Noto Serif JP", color: "#000000" }}>・ヘルメット治療アプリ</p>
+                    <p
+                      className="text-sm"
+                      style={{ fontFamily: "Noto Serif JP", color: "#000000" }}
+                    >
+                      ・体温計アプリ
+                    </p>
+                    <p
+                      className="text-sm"
+                      style={{ fontFamily: "Noto Serif JP", color: "#000000" }}
+                    >
+                      ・ヘルメット治療アプリ
+                    </p>
                     <div className="flex flex-row mt-4">
                       <motion.div
                         whileHover={{ scale: 1.0, rotate: 20 }}
@@ -269,8 +426,18 @@ function App() {
                     </h2>
                   </div>
                   <div>
-                  <p className = 'text-sm' style={{ fontFamily: "Noto Serif JP", color: "#000000" }}>・不動産ビッグデータ提供システム</p>
-                  <p className = 'text-sm' style={{ fontFamily: "Noto Serif JP", color: "#000000" }}>・医師用ヘルメット治療システム</p>
+                    <p
+                      className="text-sm"
+                      style={{ fontFamily: "Noto Serif JP", color: "#000000" }}
+                    >
+                      ・不動産ビッグデータ提供システム
+                    </p>
+                    <p
+                      className="text-sm"
+                      style={{ fontFamily: "Noto Serif JP", color: "#000000" }}
+                    >
+                      ・医師用ヘルメット治療システム
+                    </p>
                     <a
                       href="https://japanmedicalcompany.co.jp/app/metto/"
                       className="flex mt-3 text-blue-500 items-center"
@@ -294,7 +461,12 @@ function App() {
                     </h2>
                   </div>
                   <div>
-                  <p className = 'text-sm' style={{ fontFamily: "Noto Serif JP", color: "#000000" }}>・心電計の開発</p>
+                    <p
+                      className="text-sm"
+                      style={{ fontFamily: "Noto Serif JP", color: "#000000" }}
+                    >
+                      ・心電計の開発
+                    </p>
                     <a
                       href="https://www.fukuda.co.jp/medical/products/ecg/fcp_9800.html"
                       className=" flex mt-2 text-sm text-blue-500 items-center underline "
@@ -417,10 +589,9 @@ function App() {
                   </div>
                 </div>
               </div>
-            
 
               {/* right side */}
-              <div className=" lg:py-6 w-full lg:w-1/2 lg:pl-5 sm:pl-0 mt-10 lg:mt-0" >
+              <div className=" lg:py-6 w-full lg:w-1/2 lg:pl-5 sm:pl-0 mt-10 lg:mt-0">
                 <h2
                   className="text-xl font-medium text-gray-900 mb-5  text-left  lg:mt-0"
                   style={{
