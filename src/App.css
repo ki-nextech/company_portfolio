@@ -1,0 +1,10 @@
+.custom-background::after {
+    content: "";
+    position: absolute;
+    right: -100%; /* 要素の右側に配置 */
+    top: 0;
+    bottom: 0;
+    width: 100vw; /* 画面幅いっぱいの幅を確保 */
+    background-color: #7E969A; /* 指定された背景色 */
+    z-index: -1; /* 要素の背後に配置 */
+  }
