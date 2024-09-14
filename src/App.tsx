@@ -1,20 +1,14 @@
 import "./style.css";
-import ummImage from "./assets/umm.png";
-import reiImage from "./assets/reiImage.png";
-import kengoImage from "./assets/kengoImage.png";
-import checkImage from "./assets/checkImage.png";
-import useImage from "./assets/useImage.png";
-import quickImage from "./assets/quickImage.png";
-import kengoPicture from "./assets/kengoPicture.png";
-import compnayIcon from "./assets/compnayIcon.png";
-import dot from "./assets/dot.png";
 import triangle from "./assets/triangle.png";
+import top from "./assets/top.png";
+import about_us from "./assets/about_us.png";
+import support_system from "./assets/support_system.png";
+import representative from "./assets/representative.png";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import "./components/custom_underline.css";
 import { FadeAnimation } from "./FadeAnimation";
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
-import { BrowserRouter } from "react-router-dom";
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
@@ -31,7 +25,7 @@ function App() {
       <section className="relative" id="top">
         <FadeAnimation>
           <div>
-            <img src="/src/assets/top.png" alt="Top" className="w-full" />
+            <img src={top} alt="Top" className="w-full" />
           </div>
         </FadeAnimation>
         <button
@@ -45,21 +39,21 @@ function App() {
       <section className="" id="aboutus">
         <FadeAnimation>
           <div>
-            <img src="/src/assets/about_us.png" />
+            <img src={about_us} />
           </div>
         </FadeAnimation>
       </section>
       <section className="" id="support_system">
         <FadeAnimation>
           <div>
-            <img src="/src/assets/support_system.png" />
+            <img src={support_system} />
           </div>
         </FadeAnimation>
       </section>
       <section className="" id="representative">
         <FadeAnimation>
           <div>
-            <img src="/src/assets/reprezentative.png" />
+            <img src={representative} />
           </div>
         </FadeAnimation>
       </section>
