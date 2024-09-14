@@ -1,14 +1,5 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
-import {
-  BookOpenIcon,
-  InformationCircleIcon,
-  UserGroupIcon,
-  QuestionMarkCircleIcon,
-  FaceSmileIcon,
-  CheckCircleIcon,
-} from "@heroicons/react/24/outline";
 
 type Props = {
   isOpen: boolean;

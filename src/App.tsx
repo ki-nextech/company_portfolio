@@ -10,24 +10,11 @@ import compnayIcon from "./assets/compnayIcon.png";
 import dot from "./assets/dot.png";
 import triangle from "./assets/triangle.png";
 import { Bars3Icon } from "@heroicons/react/24/solid";
-
-// import { Link } from 'react-router-dom';
-// import Sidebar from './Sidebar';
-// import UserInfo from './UserInfo';
-// import mettoForDoctorLogo from '../../assets/metto_for_doctor_logo.png';
-
-// import { FadeAnimation } from "./FadeAnimation";
 import "./components/custom_underline.css";
 import { FadeAnimation } from "./FadeAnimation";
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import { BrowserRouter } from "react-router-dom";
-// import HamburgerMenuIcon from './components/HamburgerMenuIcon.tsx';
-// import { hookstate, useHookstate } from "@hookstate/core";
-// import { useState } from "react";
-// import styled from "styled-components";
-// const hexagonCenterYState = hookstate(0);
-
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
@@ -41,40 +28,40 @@ function App() {
   return (
     <>
       <header className="text-gray-700 border-b border-gray-500">
-      <BrowserRouter>
-        <div className="flex flex-row" style={{ backgroundColor: "#7E969A" }}>
-          <div
-            className="ml-0 xl:ml-10  w-full mx-auto"
-            style={{ backgroundColor: "#F9F8F4" }}
-          >
-            <div className=" container mx-auto max-w-7xl p-5 ">
-              <div className="flex flex-row">
-                <img
-                  src={compnayIcon}
-                  alt="compnayIcon"
-                  className="object-cover"
-                />
+        <BrowserRouter>
+          <div className="flex flex-row" style={{ backgroundColor: "#7E969A" }}>
+            <div
+              className="ml-0 xl:ml-10  w-full mx-auto"
+              style={{ backgroundColor: "#F9F8F4" }}
+            >
+              <div className=" container mx-auto max-w-7xl p-5 ">
+                <div className="flex flex-row">
+                  <img
+                    src={compnayIcon}
+                    alt="compnayIcon"
+                    className="object-cover"
+                  />
 
-                <a
-                  href="#"
-                  className=" text-gray-900 flex items-center justify-center"
-                >
-                  <span
-                    className="text-xl xl:text-2xl whitespace-nowrap ml-2"
-                    style={{
-                      //全丸ゴシック
-                      fontFamily: "Zen Maru Gothic",
-                    }}
+                  <a
+                    href="#"
+                    className=" text-gray-900 flex items-center justify-center"
                   >
-                    合同会社 アプリ製作所
-                  </span>
-                </a>
-                <button className=" ml-auto"  onClick={openModal}>
-                  <Bars3Icon className="w-9 h-9 text-primary hover:bg-gray-300/30 hover:rounded-full" />
-                </button>
-              </div>
+                    <span
+                      className="text-xl xl:text-2xl whitespace-nowrap ml-2"
+                      style={{
+                        //全丸ゴシック
+                        fontFamily: "Zen Maru Gothic",
+                      }}
+                    >
+                      合同会社 アプリ製作所
+                    </span>
+                  </a>
+                  <button className=" ml-auto" onClick={openModal}>
+                    <Bars3Icon className="w-9 h-9 text-primary hover:bg-gray-300/30 hover:rounded-full" />
+                  </button>
+                </div>
 
-              {/* <nav className="xl:ml-auto text-base">
+                {/* <nav className="xl:ml-auto text-base">
                 <a
                   href="#service"
                   className="mr-5 hover:text-blue-400 duration-1000"
@@ -105,10 +92,10 @@ function App() {
                   CONTACT
                 </a>
               </nav> */}
+              </div>
             </div>
           </div>
-        </div>
-        
+
           <Sidebar isOpen={isSidebarOpen} closeModal={closeModal} />
         </BrowserRouter>
       </header>
@@ -259,10 +246,7 @@ function App() {
         style={{ backgroundColor: "#DCE3E3", paddingTop: "2rem" }}
       >
         <FadeAnimation>
-          <div
-            className="container mx-auto  max-w-sm xl:max-w-7xl "
-          
-          >
+          <div className="container mx-auto  max-w-sm xl:max-w-7xl ">
             <h1
               className="text-3xl xl:text-6xl custom-underline text-center "
               style={{
@@ -419,7 +403,7 @@ function App() {
                   <div className="flex flex-row">
                     <div className="w-1/8">2023年：</div>
                     <div className="flex flex-7" style={{ maxWidth: "80.0%" }}>
-                      フリーランスエンジニアになる。対応できる領域は
+                      合同会社アプリ製作所を設立。対応できる領域は
                       <br />
                       ・スマホアプリ開発
                       <br />
