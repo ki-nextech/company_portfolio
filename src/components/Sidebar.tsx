@@ -44,13 +44,17 @@ const Sidebar = ({ isOpen, closeModal }: Props) => {
                 leaveTo="opacity-0 -translate-x-full"
               >
                 <Dialog.Panel
-                  className="w-[308px] fixed right-0 top-14 bottom-0 text-left  z-20 overflow-auto"
+                  className="w-[200px] fixed right-0 top-0 bottom-0 text-left z-50 overflow-auto"
                   style={{ backgroundColor: "#F9F8F4" }}
                 >
                   <ul className="space-y-3 mt-5">
                     <li className="sidebarLi hover:bg-primary/10">
-                      <a className="px-6  block font-medium text-gray-600">
-                        <div onClick={() => scrollToRepresentative("top")}>
+                      <a className="px-6 block font-medium text-gray-600">
+                        <div
+                          onClick={() =>
+                            scrollToRepresentative("top")
+                          }
+                        >
                           top
                         </div>
                       </a>
@@ -64,14 +68,18 @@ const Sidebar = ({ isOpen, closeModal }: Props) => {
                     </li>
                     <li className="sidebarLi hover:bg-primary/10">
                       <a className="px-6 block font-medium text-gray-600">
-                        <div onClick={() => scrollToRepresentative("aboutus")}>
+                        <div onClick={() => scrollToRepresentative("support_system")}>
                           support system
                         </div>
                       </a>
                     </li>
                     <li className="sidebarLi hover:bg-primary/10">
                       <a className="px-6 block font-medium text-gray-600 ">
-                        <div onClick={() => scrollToRepresentative("representative")}>
+                        <div
+                          onClick={() =>
+                            scrollToRepresentative("representative")
+                          }
+                        >
                           representative
                         </div>
                       </a>
