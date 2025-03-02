@@ -1,5 +1,7 @@
+@import "../constants/css_variables.css";
+
 .custom-underline {
-    text-decoration: underline;
-    text-decoration-color: #FFB6B9; /* アンダーラインの色 */
-    text-decoration-thickness: 2px; /* アンダーラインの太さ */
-  }
+  text-decoration: underline;
+  text-decoration-color: var(--accent-pink); /* アンダーラインの色 */
+  text-decoration-thickness: 2px; /* アンダーラインの太さ */
+}

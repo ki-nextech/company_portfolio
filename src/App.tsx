@@ -13,6 +13,7 @@ import "./components/custom_underline.css";
 import { FadeAnimation } from "./FadeAnimation";
 import { useEffect, useState } from "react";
 import Sidebar from "./components/Sidebar";
+
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -23,9 +24,26 @@ function App() {
     };
 
     checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
+    window.addEventListener("resize", checkScreenSize);
 
-    return () => window.removeEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  // アプリ製作所用のタイトルとファビコンを設定
+  useEffect(() => {
+    // タイトルを「アプリ製作所」に設定
+    document.title = "アプリ製作所";
+
+    // ファビコンを元のものに設定
+    const favicon = document.querySelector('link[rel="icon"]');
+    if (favicon) {
+      favicon.setAttribute("href", "/compnayIcon.png");
+    }
+
+    return () => {
+      // コンポーネントのアンマウント時にはデフォルトの設定に戻さない
+      // Company.tsxコンポーネントが自身の設定を行うため
+    };
   }, []);
 
   const closeModal = () => {
@@ -42,14 +60,18 @@ function App() {
       <section className="relative" id="top">
         <FadeAnimation>
           <div>
-            <img src={isMobile ? top_mobile : top} alt="Top" className="w-full" />
+            <img
+              src={isMobile ? top_mobile : top}
+              alt="Top"
+              className="w-full"
+            />
           </div>
         </FadeAnimation>
         <button
           className="absolute right-4 top-2 sm:right-8 sm:top-6 md:right-0 md:top-0 xl:top-5 xl:right-5"
           onClick={openModal}
         >
-          <Bars3Icon className="w-10 h-10 sm:w-12 sm:h-12  md:w-10 md:h-10 lg:w-12 lg:h-12 text-primary hover:bg-gray-300/30 hover:rounded-full" />
+          <Bars3Icon className="w-10 h-10 sm:w-12 sm:h-12 md:w-10 md:h-10 lg:w-12 lg:h-12 text-transparent hover:text-primary hover:bg-gray-300/30 hover:rounded-full" />
         </button>
       </section>
 
@@ -63,21 +85,26 @@ function App() {
       <section className="" id="support_system">
         <FadeAnimation>
           <div>
-            <img src={isMobile ? support_system_mobile : support_system} alt="Support System" />
+            <img
+              src={isMobile ? support_system_mobile : support_system}
+              alt="Support System"
+            />
           </div>
         </FadeAnimation>
       </section>
       <section className="" id="representative">
         <FadeAnimation>
           <div>
-            <img src={isMobile ? representative_mobile : representative} alt="Representative" />
+            <img
+              src={isMobile ? representative_mobile : representative}
+              alt="Representative"
+            />
           </div>
         </FadeAnimation>
       </section>
 
       <div
-        className="fixed z-10 bottom-2 right-2 md:top-20 md:right-20 border-2 rounded-full cursor-pointer w-20 h-20 xl:w-28 xl:h-28 flex justify-center items-center "
-        style={{ backgroundColor: "#FFB6B9" }}
+        className="fixed z-10 bottom-2 right-2 md:top-20 md:right-20 border-2 rounded-full cursor-pointer w-20 h-20 xl:w-28 xl:h-28 flex justify-center items-center bg-accent-pink"
         onClick={() => {
           window.open(
             "https://docs.google.com/forms/d/1Qpt3GTKAA8UNbi9u48SF_ebxJ9K586Qgulha-0U-Uo8/edit"

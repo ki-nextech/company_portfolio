@@ -1,0 +1,27 @@
+:root {
+  /* ブランドカラー */
+  --gold-light: #d4c192;
+  --gold-default: #b4a670;
+  --gold-dark: #9a8c55;
+
+  --accent-light: #d5c3b0;
+  --accent-default: #c7ad94;
+  --accent-dark: #a48a72;
+
+  /* 背景色 */
+  --background-light: #fdf8f1;
+  --background-default: #f9f8f4;
+  --background-soft: #f5ede3;
+  --background-dark: #262626;
+
+  /* アクセントカラー */
+  --accent-pink: #ffb6b9;
+  --accent-blue-gray: #7e969a;
+
+  /* テキスト色 */
+  --text-dark: #262626;
+  --text-gray-light: #a3a3a3;
+  --text-gray-default: #737373;
+  --text-gray-dark: #525252;
+  --text-white: #ffffff;
+}
